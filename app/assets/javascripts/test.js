@@ -35,10 +35,12 @@ var cube25 = new Array('o','o','o','t','t','u');
 var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9, cube10,
 					 cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25);
 
+var previous; //stores
 
 var gridWrapper = document.createElement("div")
-gridWrapper.style.width = "375px"
-gridWrapper.style.border = "1px solid"
+gridWrapper.classList.add("gridWrapper")
+// gridWrapper.style.width = "375px"
+// gridWrapper.style.border = "1px solid"
 document.body.appendChild(gridWrapper)
 
 for(let i=0; i<grid.length;i++){
@@ -49,12 +51,18 @@ for(let i=0; i<grid.length;i++){
 
   var die = document.getElementsByClassName("die")
   var word = []
+  var used_index = []
   die[i].addEventListener("mousedown", function(){
     word.push(event.target.innerHTML)
+    used_index.push(i)
+
     die[i].addEventListener("mouseup", function(){
       console.log(word)
+      console.log(used_index)
 
     })
+
   })
 }
+
 })
