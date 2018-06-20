@@ -63,26 +63,97 @@ for(let i=0; i<grid.length;i++){
   var die = document.getElementsByClassName("die")
   var word = ""
   var used_index = []
-  die[i].addEventListener("mousedown", function(){
-    die[i].style.backgroundColor = "gold";
-    word += event.target.innerHTML
-    used_index.push(i)
-    previous = i
-    console.log(previous)
 
-    die[i].addEventListener("mouseup", function(){
-      if(word.length >= 3)
-      console.log(word)
-      console.log(used_index)
+die[i].addEventListener("mousedown", function(){
+  if(i == 0){
+    die[i].style.backgroundColor = "purple";
+    die[i+1].style.backgroundColor = "purple";
+    die[i+5].style.backgroundColor = "purple";
+    die[i+6].style.backgroundColor = "purple";
+  }
+  else if( i % 5 == 0 && i !== 20){
+    die[i].style.backgroundColor = "mediumpurple";
+    die[i+1].style.backgroundColor = "mediumpurple";
+    die[i+5].style.backgroundColor = "mediumpurple";
+    die[i+6].style.backgroundColor = "mediumpurple";
+    die[i-4].style.backgroundColor = "mediumpurple";
+    die[i-5].style.backgroundColor = "mediumpurple";
+  }
+  else if(i == 4){
+    die[i].style.backgroundColor = "green";
+    die[i-1].style.backgroundColor = "green";
+    die[i+4].style.backgroundColor = "green";
+    die[i+5].style.backgroundColor = "green";
+  }
+  else if( i == 9 || i == 14 || i == 19){
+    die[i].style.backgroundColor = "lightgreen";
+    die[i-1].style.backgroundColor = "lightgreen";
+    die[i+4].style.backgroundColor = "lightgreen";
+    die[i+5].style.backgroundColor = "lightgreen";
+    die[i-5].style.backgroundColor = "lightgreen";
+    die[i-6].style.backgroundColor = "lightgreen";
 
-    })
+  }
+  else if (i == 24){
+    die[i].style.backgroundColor = "yellow";
+    die[i-1].style.backgroundColor = "yellow";
+    die[i-5].style.backgroundColor = "yellow";
+    die[i-6].style.backgroundColor = "yellow";
+  }
+  else if (i == 21 || i == 22 || i == 23){
+    die[i].style.backgroundColor = "silver";
+    die[i-1].style.backgroundColor = "silver";
+    die[i+1].style.backgroundColor = "silver";
+    die[i-4].style.backgroundColor = "silver";
+    die[i-5].style.backgroundColor = "silver";
+    die[i-6].style.backgroundColor = "silver";
+  }
+  else if (i == 20){
+    die[i].style.backgroundColor = "white";
+    die[i+1].style.backgroundColor = "white";
+    die[i-4].style.backgroundColor = "white";
+    die[i-5].style.backgroundColor = "white";
+  }
+  else if (i==1 || i==2 || i==3){
+    die[i].style.backgroundColor = "teal";
+    die[i-1].style.backgroundColor = "teal";
+    die[i+1].style.backgroundColor = "teal";
+    die[i+4].style.backgroundColor = "teal";
+    die[i+5].style.backgroundColor = "teal";
+    die[i+6].style.backgroundColor = "teal";
+  }
+  else{
+    die[i].style.backgroundColor = "powderblue";
+    die[i-1].style.backgroundColor = "powderblue";
+    die[i+1].style.backgroundColor = "powderblue";
+    die[i+4].style.backgroundColor = "powderblue";
+    die[i+5].style.backgroundColor = "powderblue";
+    die[i+6].style.backgroundColor = "powderblue";
+    die[i-4].style.backgroundColor = "powderblue";
+    die[i-5].style.backgroundColor = "powderblue";
+    die[i-6].style.backgroundColor = "powderblue";
+  }
+})
 
-  })
+
+
+
+  // die[i].addEventListener("mousedown", function(){
+  //   die[i].style.backgroundColor = "gold";
+  //   word += event.target.innerHTML
+  //   used_index.push(i)
+  //   previous = i
+  //   console.log(previous)
+  //
+  //   die[i].addEventListener("mouseup", function(){
+  //     if(word.length >= 3)
+  //     console.log(word)
+  //     console.log(used_index)
+  //
+  //   })
+  //
+  // })
 
 }
-<<<<<<< HEAD:app/assets/javascripts/test.js
 
-
-=======
->>>>>>> 7f8eba3e90842b60aad8d1825d12175c1e6a6388:app/assets/javascripts/game/test.js
 })
