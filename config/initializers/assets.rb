@@ -15,4 +15,3 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( home.js)
 Rails.application.config.assets.precompile += %w( test.js )
-
