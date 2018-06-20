@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('soup-icon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Neucha" rel="stylesheet">
+    <meta name="turbolinks-cache-control" content="no-cache">
   </head>
 
   <body>
+    <div id="test"></div>
+    <%= render 'layouts/navigation' %>
     <%= yield %>
+    <script src="test.js" charset="utf-8"></script>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
