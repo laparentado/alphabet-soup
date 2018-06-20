@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#test{
+  border: 1px solid;
+  height: 100px;
+  width: 100px;
+}
+
+.gridWrapper{
+  border:1px solid;
+  flex-wrap: wrap;
+  max-width: 288px;
+  display: wrap;
+}
+.die{
+  background-color: red;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 25%;
+  margin: 1px;
+  text-align: center;
+}
