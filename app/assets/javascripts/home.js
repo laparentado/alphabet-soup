@@ -14,7 +14,7 @@ function test(string){
   });
 }
 
-test(string1)
+// test(string1)
 
 
 
