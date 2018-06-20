@@ -46,19 +46,25 @@ for(let i=0; i<grid.length;i++){
   gridWrapper.appendChild(dice)
 
   var die = document.getElementsByClassName("die")
-  var word = []
+  var word = ""
   var used_index = []
   die[i].addEventListener("mousedown", function(){
-    word.push(event.target.innerHTML)
+    die[i].style.backgroundColor = "gold";
+    word += event.target.innerHTML
     used_index.push(i)
+    previous = i
+    console.log(previous)
 
     die[i].addEventListener("mouseup", function(){
+      if(word.length >= 3)
       console.log(word)
       console.log(used_index)
 
     })
 
   })
+
 }
+
 
 })
