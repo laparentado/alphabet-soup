@@ -1,5 +1,22 @@
-window.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function() {
 
+  console.log('hello')
+  var string1 = "orange";
+
+  function test(string){
+    Rails.ajax({
+      url: "/posting",
+      type: "POST",
+      data: "word=" + string,
+      success: function(data) {
+        console.log(string)
+      }
+    });
+  }
+
+  // test(string1)
+
+var mainContent = document.getElementById("main-content")
 
 var cube1 = new Array('a','a','a','f','r','s');
 var cube2 = new Array('a','a','e','e','e','e');
@@ -35,9 +52,7 @@ var previous; //stores
 
 var gridWrapper = document.createElement("div")
 gridWrapper.classList.add("gridWrapper")
-// gridWrapper.style.width = "375px"
-// gridWrapper.style.border = "1px solid"
-document.body.appendChild(gridWrapper)
+mainContent.appendChild(gridWrapper)
 
 for(let i=0; i<grid.length;i++){
   var dice = document.createElement("div")
@@ -65,6 +80,9 @@ for(let i=0; i<grid.length;i++){
   })
 
 }
+<<<<<<< HEAD:app/assets/javascripts/test.js
 
 
+=======
+>>>>>>> 7f8eba3e90842b60aad8d1825d12175c1e6a6388:app/assets/javascripts/game/test.js
 })
