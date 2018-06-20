@@ -1,3 +1,18 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#test{
+  border: 1px solid;
+  height: 100px;
+  width: 100px;
+}
+
+.die{
+  background-color: red;
+  display: inline-block;
+  width: 53px;
+  font-size: 30px;
+  padding: 10px;
+  border: 1px solid;
+}
