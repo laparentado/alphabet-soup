@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   root  'home#index'
   post "/posting" => "home#posting"
   get "/new" => "home#new"
-  
+
   resources :users
 end
