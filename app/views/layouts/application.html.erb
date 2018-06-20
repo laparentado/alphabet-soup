@@ -7,36 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<<<<<<< HEAD
     <%= favicon_link_tag asset_path('soup-icon.png'), :rel => 'icon', :type =>  'image/png' %>
     <link href="https://fonts.googleapis.com/css?family=Chewy|Neucha" rel="stylesheet">
+    <meta name="turbolinks-cache-control" content="no-cache">
   </head>
 
   <body>
     <%= render 'layouts/navigation' %>
-=======
-      <meta name="turbolinks-cache-control" content="no-cache">
-  </head>
-
-  <body>
-    <nav>
-      <%= link_to "home", root_path %>
-      <% if !signed_in? %>
-      || <%= link_to "login", new_user_session_path %>
-      <% elsif signed_in? %>
-      ||   <%= link_to "logout",destroy_user_session_path, method: :delete %>
-      <% end %>
-    </nav>
     <div id="test"></div>
-    <script src="test.js" charset="utf-8"></script>
->>>>>>> 39d7dd724aadaa1186062e8d669e8dcb0d9ced45
-
     <%= yield %>
-<<<<<<< HEAD
+    <script src="test.js" charset="utf-8"></script>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-=======
->>>>>>> 39d7dd724aadaa1186062e8d669e8dcb0d9ced45
+    <div id="test"></div>
+    <%= render 'layouts/navigation' %>
+    <%= yield %>
+    <script src="test.js" charset="utf-8"></script>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
