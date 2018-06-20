@@ -1,9 +1,5 @@
 window.addEventListener("DOMContentLoaded", function(){
-  var test = document.getElementById("test")
 
-  test.addEventListener("click", function(){
-    test.style.backgroundColor = "red";
-  })
 
 var cube1 = new Array('a','a','a','f','r','s');
 var cube2 = new Array('a','a','e','e','e','e');
