@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded",function(){
 
 
-var string1 = "orange";
+var string1 = ""
 
 function test(string){
   Rails.ajax({
