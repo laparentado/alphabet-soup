@@ -7,9 +7,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('soup-icon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Neucha" rel="stylesheet">
+    <meta name="turbolinks-cache-control" content="no-cache">
   </head>
 
   <body>
+<<<<<<< HEAD
     <nav>
       <%= link_to "home", root_path %>
       <% if !signed_in? %>
@@ -18,11 +22,14 @@
       ||   <%= link_to "logout",destroy_user_session_path, method: :delete %>
       <% end %>
     </nav>
+=======
+    <div id="test"></div>
+    <%= render 'layouts/navigation' %>
+    <%= yield %>
+>>>>>>> a158efeb3d663101b9a5c226968c68e4f374b4b3
     <script src="test.js" charset="utf-8"></script>
 
     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-    <%= yield %>
-
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
