@@ -13,18 +13,10 @@
   </head>
 
   <body>
-    <nav>
-      <%= link_to "home", root_path %>
-      <% if !signed_in? %>
-      || <%= link_to "login", new_user_session_path %>
-      <% elsif signed_in? %>
-      ||   <%= link_to "logout",destroy_user_session_path, method: :delete %>
-      <% end %>
-    </nav>
+
     <div id="test"></div>
     <%= render 'layouts/navigation' %>
     <%= yield %>
-    <script src="test.js" charset="utf-8"></script>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
