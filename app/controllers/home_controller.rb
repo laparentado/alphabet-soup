@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     client = OxfordDictionary::Client.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
     client = OxfordDictionary.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
 
-    @result = client.entry('balloon')
+    @result = client.search('airplane', prefix: true)
+    @result2 = client.entry('airplane')
   end
 end

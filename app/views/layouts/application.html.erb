@@ -7,21 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('soup-icon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Neucha" rel="stylesheet">
   </head>
 
   <body>
-    <nav>
-      <%= link_to "home", root_path %>
-      <% if !signed_in? %>
-      || <%= link_to "login", new_user_session_path %>
-      <% elsif signed_in? %>
-      ||   <%= link_to "logout",destroy_user_session_path, method: :delete %>
-      <% end %>
-    </nav>
+    <%= render 'layouts/navigation' %>
 
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
     <%= yield %>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
