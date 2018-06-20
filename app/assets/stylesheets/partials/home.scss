@@ -11,17 +11,17 @@
 .gridWrapper{
   border:1px solid;
   flex-wrap: wrap;
-  max-width: 375px;
+  max-width: 288px;
   display: wrap;
 }
 .die{
   background-color: red;
   display: inline-block;
-  width: 53px;
-  height: 53px;
+  width: 55px;
+  height: 55px;
   font-size: 30px;
   padding: 10px;
-  border: 1px solid;
-  border-radius: 50%;
+  border-radius: 25%;
+  margin: 1px;
   text-align: center;
 }
