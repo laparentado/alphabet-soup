@@ -9,7 +9,7 @@ document.addEventListener("turbolinks:load", function() {
       type: "POST",
       data: "word=" + string,
       success: function(data) {
-        console.log("SUCCESS")
+        console.log(data)
         clear()
       }
     });
