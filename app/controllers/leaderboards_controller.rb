@@ -3,4 +3,7 @@ class LeaderboardsController < ApplicationController
     @scores = Score.all
 
   end
+
+
+  
 end

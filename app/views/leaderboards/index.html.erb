@@ -1,14 +1,1 @@
-<h2>Top Scores</h2>
 
-<% score = [] %>
-<div id="leaderboardWrap">
-<% @scores.each do |s| %>
-  <% score.push(s.points)%>
-  <hr>
-<% end %>
-</div>
-
-<% score.sort.reverse.each do |f| %>
-<%= f %>
-<hr>
-<% end %>
