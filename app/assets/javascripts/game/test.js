@@ -14,6 +14,16 @@ document.addEventListener("turbolinks:load", function() {
     });
   }
 
+  var banner = document.getElementById("banner")
+  var trigger = document.getElementById("trigger")
+
+  trigger.addEventListener("click",function(){
+    banner.style.display = "block";
+  })
+
+
+
+
   // test(string1)
 
 var mainContent = document.getElementById("main-content")

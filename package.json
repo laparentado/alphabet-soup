@@ -1,5 +1,7 @@
 {
   "name": "alphabet-soup",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "micromodal": "^0.3.2"
+  }
 }
