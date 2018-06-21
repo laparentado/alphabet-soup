@@ -9,7 +9,7 @@ document.addEventListener("turbolinks:load", function() {
       type: "POST",
       data: "word=" + string,
       success: function(data) {
-        console.log("SUCCESS")
+        console.log(data)
         clear()
       }
     });
@@ -149,9 +149,12 @@ for(let i=0; i<grid.length;i++){
 }
 var submit = document.createElement("button")
 var score = document.createElement("div")
+var wordList = document.createElement("div")
 var points = 0;
 score.classList.add("score")
+wordList.classList.add("wordList")
 mainContent.appendChild(score)
+mainContent.appendChild(wordList)
 submit.setAttribute("id", "submit")
 submit.innerHTML = "submit"
 mainContent.appendChild(submit)
@@ -159,6 +162,7 @@ submit.addEventListener("click", function(){
   test(word)
   points = points+ (parseInt(word.length)-2)
   score.innerHTML = points
+  wordList.innerHTML += word + "<br>points:" + (word.length-2) + "<br>"
 })
 
 
