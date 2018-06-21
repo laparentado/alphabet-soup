@@ -9,7 +9,22 @@
 	z-index: 5;
 }
 
+#banner2 {
+	top:5%;
+	width:100%;
+	opacity:.95;
+	position:fixed;
+	display:none;
+	height:100%;
+	background-color:black;
+	z-index: 5;
+}
+
 #trigger {
+  cursor: pointer;
+}
+
+#trigger2 {
   cursor: pointer;
 }
 
@@ -22,7 +37,22 @@
   border-radius: 40px 40px;
 }
 
+#leaderboard {
+  position:relative;
+  left:350px;
+  width:500px;
+  height:300px;
+  background-color:white;
+  border-radius: 40px 40px;
+}
+
 #instructTitle {
+  position:relative;
+  left:165px;
+
+}
+
+#leaderTitle {
   position:relative;
   left:165px;
 

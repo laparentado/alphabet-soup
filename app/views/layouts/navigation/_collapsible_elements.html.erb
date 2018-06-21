@@ -2,7 +2,7 @@
   <ul class="nav navbar-nav ">
     <% if user_signed_in? %>
       <li class="dropdown pc-menu">
-        <%= link_to 'Leaderboards', leaderboards_path%>
+        <%= content_tag("a","Leaderboard",id: "trigger2")%>
       </li>
 
       <li class="dropdown pc-menu">

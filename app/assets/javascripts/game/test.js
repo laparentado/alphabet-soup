@@ -16,10 +16,19 @@ document.addEventListener("turbolinks:load", function() {
 
   var banner = document.getElementById("banner")
   var trigger = document.getElementById("trigger")
+  var banner2 = document.getElementById("banner2")
+  var trigger2 = document.getElementById("trigger2")
 
+  trigger2.addEventListener("click",function(){
+    banner2.style.display = "block";
+  })
   trigger.addEventListener("click",function(){
     banner.style.display = "block";
   })
+
+
+
+
 
 
 
