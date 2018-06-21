@@ -48,7 +48,6 @@ var cube25 = new Array('o','o','o','t','t','u');
 var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9, cube10,
 					 cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25);
 
-var previous; //stores
 
 var createdWord = document.createElement("div")
 createdWord.classList.add("createdWord")
@@ -67,10 +66,32 @@ for(let i=0; i<grid.length;i++){
   var die = document.getElementsByClassName("die")
   var word = ""
   var used_index = []
-  var pressed
 
+// function available(){
+// die[i].addEventListener("mousedown", function(){
+//   var pressed = die[i]
+//   if (pressed == die[0] && i == 0 || i == 1 || i == 5 || i ==6){
+//     word+= event.target.innerHTML
+//     createdWord.innerHTML = word
+//   }else if(pressed == die[1] && i == 1 || i ==0 || i ==2 ||i ==5 || i ==6 || i ==7) {
+//     word += event.target.innerHTML
+//     createdWord.innerHTML = word
+//       console.log("die 1")
+//     }else if(pressed == die[24] && i == 24 || i == 23 || i == 19 || i ==18){
+//       word += event.target.innerHTML
+//       createdWord.innerHTML = word
+//       console.log("die 24")
+//     }else{
+//       die[i].removeEventListener("mousedown", function(){
+//
+//     })
+//   }
+// })
+// }
+//
+// available()
 
-
+var pressed;
 die[i].addEventListener("mousedown", function(){
   word += event.target.innerHTML
   createdWord.innerHTML = word
@@ -83,6 +104,7 @@ die[i].addEventListener("mousedown", function(){
     die[i+6].style.backgroundColor = "purple";
   }
   else if( i % 5 == 0 && i !== 20){
+    die[i].style.backgroundColor = "red";
     pressed = i;
     console.log(pressed);
     die[i].style.backgroundColor = "mediumpurple";
@@ -161,7 +183,6 @@ die[i].addEventListener("mousedown", function(){
     die[i-6].style.backgroundColor = "powderblue";
   }
 })
-
 
 
 

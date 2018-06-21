@@ -7,6 +7,14 @@
   width: 200px;
 }
 
+#disabled{
+  pointer-events: none;
+}
+
+.enabled{
+  pointer-events: auto;
+}
+
 .gridWrapper{
   border:1px solid;
   flex-wrap: wrap;
