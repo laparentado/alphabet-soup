@@ -22,6 +22,18 @@
   <div id="leaderboard">
     <h2 id="leaderboardTitle">Top Scores</h2>
     <i id="leadButton"class="fas fa-times"></i>
+    <div id="scoreWrap">
+      <% score = [] %>
+      <% @scores.each do |s| %>
+      <% score.push(s.points) %>
+      <% end %>
+
+      <% score.sort.reverse.each do |f|%>
+      <%= f %>
+      <hr>
+      <% end %>
+
+    </div>
   </div>
 </div>
 
