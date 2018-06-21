@@ -18,6 +18,16 @@ document.addEventListener("turbolinks:load", function() {
   var trigger = document.getElementById("trigger")
   var banner2 = document.getElementById("banner2")
   var trigger2 = document.getElementById("trigger2")
+  var leadButton = document.getElementById("leadButton")
+  var howButton = document.getElementById("howButton")
+
+  howButton.addEventListener("click",function(){
+    banner.style.display = "none"
+  })
+
+  leadButton.addEventListener("click",function(){
+    banner2.style.display = "none"
+  })
 
   trigger2.addEventListener("click",function(){
     banner2.style.display = "block";
