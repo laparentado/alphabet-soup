@@ -17,10 +17,8 @@ class HomeController < ApplicationController
     result =  client.search(@string,prefix: true)
     if result.results == []
       puts 'you fail'
-      render "/"
     else
       puts "success"
-      redirect_to "/"
     end
   end
 
