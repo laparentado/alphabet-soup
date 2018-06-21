@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/leaderboards" => "leaderboards#index"
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   devise_scope :user do
