@@ -18,31 +18,53 @@
     <%= yield %>
 
 
-<div id="banner2">
-  <div id="leaderboard">
-    <h2 id="leaderboardTitle">Top Scores</h2>
-    <i id="leadButton"class="fas fa-times"></i>
-    <div id="scoreWrap">
-      <% score = [] %>
-      <% @scores.each do |s| %>
-      <% score.push(s.points) %>
-      <% end %>
+    <div id="banner2" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Top Scores</h2>
+        </div>
+        <div class="modal-body">
+          <% score = [] %>
+          <% @scores.each do |s| %>
+          <% name = User.find(s.user_id).username %>
+          <% score.push([s.points, name]) %>
+          <% end %>
 
-      <% score.sort.reverse.each do |f|%>
-      <%= f %>
-      <hr>
-      <% end %>
-
+          <% score.sort.reverse.take(10).each do |f|%>
+            <div class="">
+              <%= f[1] %> : <%= f[0] %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <h3>Go get your soup on</h3>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div id="banner">
+    <div id="banner" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>How To Play</h2>
+        </div>
+        <div class="modal-body">
+          <p>RUlES ANd STUff</p>
+        </div>
+        <div class="modal-footer">
+          <h3>Go get your soup on</h3>
+        </div>
+      </div>
+    </div>
+
+
+<!-- <div id="banner">
   <div id="instruct">
     <h2 id="instructTitle">How To Play</h2>
     <i id="howButton"class="fas fa-times"></i>
   </div>
-</div>
+</div> -->
 
 
     <p class="notice"><%= notice %></p>

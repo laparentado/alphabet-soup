@@ -16,9 +16,9 @@ class HomeController < ApplicationController
     @string = params[:word]
     result =  client.search(@string,prefix: true)
     if result.results == []
-      puts 'you fail'
+      puts "you fail"
     else
-      puts "success"
+      puts result.results[0].id
     end
   end
 

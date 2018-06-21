@@ -11,7 +11,7 @@ def seed_users
   user_id = 1
   10.times do
     User.create(
-      name: "test#{user_id}",
+      username: "test#{user_id}",
       email: "test#{user_id}@test.com",
       password: '123456',
       password_confirmation: '123456'
@@ -27,9 +27,12 @@ def seed_scores
   users.each do |user|
     5.times do
       Score.create(
-        points: rand(100..600),
+        points: rand(1..15),
         user_id: rand(1..9),
       )
     end
   end
 end
+
+seed_users
+seed_scores

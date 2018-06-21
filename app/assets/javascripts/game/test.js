@@ -16,33 +16,32 @@ document.addEventListener("turbolinks:load", function() {
   }
 
   var banner = document.getElementById("banner")
-  var trigger = document.getElementById("trigger")
   var banner2 = document.getElementById("banner2")
+  var span = document.getElementsByClassName("close")[0];
+  var span2 = document.getElementsByClassName("close")[1];
+  var trigger = document.getElementById("trigger")
   var trigger2 = document.getElementById("trigger2")
-  var leadButton = document.getElementById("leadButton")
-  var howButton = document.getElementById("howButton")
-
-  howButton.addEventListener("click",function(){
-    banner.style.display = "none"
-  })
-
-  leadButton.addEventListener("click",function(){
-    banner2.style.display = "none"
-  })
 
   trigger2.addEventListener("click",function(){
-    banner2.style.display = "block";
+    banner.style.display = "none";
+    setTimeout (function() {banner2.style.display = "block";}, 100);
   })
   trigger.addEventListener("click",function(){
-    banner.style.display = "block";
+    banner2.style.display = "none"
+    setTimeout (function() {banner.style.display = "block";}, 100);
   })
-
-
-
-
-
-
-
+  span.onclick = function() {
+    banner2.style.display = "none";
+  }
+  span2.onclick = function() {
+    banner.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == banner2 || event.target == banner) {
+        banner2.style.display = "none";
+        banner.style.display = "none";
+    }
+  }
 
   // test(string1)
 
