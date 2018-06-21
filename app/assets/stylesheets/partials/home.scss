@@ -7,13 +7,7 @@
   width: 200px;
 }
 
-#disabled{
-  pointer-events: none;
-}
 
-.enabled{
-  pointer-events: auto;
-}
 
 .gridWrapper{
   border:1px solid;
@@ -21,7 +15,7 @@
   max-width: 288px;
   display: wrap;
 }
-.die{
+.gridWrapper li{
   background-color: red;
   display: inline-block;
   width: 55px;
@@ -31,4 +25,11 @@
   border-radius: 25%;
   margin: 1px;
   text-align: center;
+}
+
+.gridWrapper li.disabled{
+  opacity: .4;
+}
+.gridWrapper li.selected{
+  background-color: gold;
 }

@@ -49,159 +49,88 @@ var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cub
 					 cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25);
 
 
-var createdWord = document.createElement("div")
-createdWord.classList.add("createdWord")
-mainContent.appendChild(createdWord)
-
 var gridWrapper = document.createElement("div")
 gridWrapper.classList.add("gridWrapper")
 mainContent.appendChild(gridWrapper)
 
 for(let i=0; i<grid.length;i++){
-  var dice = document.createElement("div")
-  dice.classList.add("die")
-  dice.innerHTML = grid[Math.floor(Math.random()*grid.length)][Math.floor(Math.random()*grid[i].length)]
-  gridWrapper.appendChild(dice)
+  var die = document.createElement("li")
+  die.innerHTML = grid[Math.floor(Math.random()*grid.length)][Math.floor(Math.random()*grid[i].length)]
+  gridWrapper.appendChild(die)
 
-  var die = document.getElementsByClassName("die")
+  die = gridWrapper.getElementsByTagName("li")
+  die[i].setAttribute("data-order", i)
+  die[i].setAttribute("data-value", die[i].innerHTML)
+}
+
+  var guess = []
   var word = ""
   var used_index = []
 
-// function available(){
-// die[i].addEventListener("mousedown", function(){
-//   var pressed = die[i]
-//   if (pressed == die[0] && i == 0 || i == 1 || i == 5 || i ==6){
-//     word+= event.target.innerHTML
-//     createdWord.innerHTML = word
-//   }else if(pressed == die[1] && i == 1 || i ==0 || i ==2 ||i ==5 || i ==6 || i ==7) {
-//     word += event.target.innerHTML
-//     createdWord.innerHTML = word
-//       console.log("die 1")
-//     }else if(pressed == die[24] && i == 24 || i == 23 || i == 19 || i ==18){
-//       word += event.target.innerHTML
-//       createdWord.innerHTML = word
-//       console.log("die 24")
-//     }else{
-//       die[i].removeEventListener("mousedown", function(){
-//
-//     })
-//   }
-// })
-// }
-//
-// available()
+  var createdWord = document.createElement("div")
+  createdWord.classList.add("createdWord")
+  mainContent.appendChild(createdWord)
 
-var pressed;
-die[i].addEventListener("mousedown", function(){
-  word += event.target.innerHTML
-  createdWord.innerHTML = word
-  if(i == 0){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "purple";
-    die[i+1].style.backgroundColor = "purple";
-    die[i+5].style.backgroundColor = "purple";
-    die[i+6].style.backgroundColor = "purple";
-  }
-  else if( i % 5 == 0 && i !== 20){
-    die[i].style.backgroundColor = "red";
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "mediumpurple";
-    die[i+1].style.backgroundColor = "mediumpurple";
-    die[i+5].style.backgroundColor = "mediumpurple";
-    die[i+6].style.backgroundColor = "mediumpurple";
-    die[i-4].style.backgroundColor = "mediumpurple";
-    die[i-5].style.backgroundColor = "mediumpurple";
-  }
-  else if(i == 4){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "green";
-    die[i-1].style.backgroundColor = "green";
-    die[i+4].style.backgroundColor = "green";
-    die[i+5].style.backgroundColor = "green";
-  }
-  else if( i == 9 || i == 14 || i == 19){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "lightgreen";
-    die[i-1].style.backgroundColor = "lightgreen";
-    die[i+4].style.backgroundColor = "lightgreen";
-    die[i+5].style.backgroundColor = "lightgreen";
-    die[i-5].style.backgroundColor = "lightgreen";
-    die[i-6].style.backgroundColor = "lightgreen";
+  function valid(index){
+    for(i=0; i < die.length; i++){
+        die[i].classList.add("disabled");
 
+    }if(index !=4 && index !=9 && index != 14 && index != 19 && index != 24){
+      die[index + 1].classList.remove("disabled")
+    }
+    if(index !=5 && index !=10 && index != 15 && index != 20 && index != 25 && index !=0){
+      die[index - 1].classList.remove("disabled")
+    }
+    if(index % 5 > 0){
+      die[index - 1].classList.remove("disabled")
+    }
+    if(index > 4){
+      die[index - 5].classList.remove("disabled")
+    }
+    if(index < 20){
+      die[index + 5].classList.remove("disabled")
+    }
+    if(index < 19 && index != 4 && index != 9 && index != 14 && index != 19 && index !=24){
+      die[index + 6].classList.remove("disabled")
+    }
+    if(index < 21 && index % 5 > 0){
+      die[index + 4].classList.remove("disabled")
+    }
+    if(index > 5 && index % 5 > 0){
+      die[index - 6].classList.remove("disabled")
+    }
+    if(index > 3 && index != 4 && index != 9 && index !=14 && index != 19 && index != 24){
+      die[index - 4].classList.remove("disabled")
+    }
+    die[index].classList.add("selected")
   }
-  else if (i == 24){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "yellow";
-    die[i-1].style.backgroundColor = "yellow";
-    die[i-5].style.backgroundColor = "yellow";
-    die[i-6].style.backgroundColor = "yellow";
-  }
-  else if (i == 21 || i == 22 || i == 23){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "silver";
-    die[i-1].style.backgroundColor = "silver";
-    die[i+1].style.backgroundColor = "silver";
-    die[i-4].style.backgroundColor = "silver";
-    die[i-5].style.backgroundColor = "silver";
-    die[i-6].style.backgroundColor = "silver";
-  }
-  else if (i == 20){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "white";
-    die[i+1].style.backgroundColor = "white";
-    die[i-4].style.backgroundColor = "white";
-    die[i-5].style.backgroundColor = "white";
-  }
-  else if (i==1 || i==2 || i==3){
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "teal";
-    die[i-1].style.backgroundColor = "teal";
-    die[i+1].style.backgroundColor = "teal";
-    die[i+4].style.backgroundColor = "teal";
-    die[i+5].style.backgroundColor = "teal";
-    die[i+6].style.backgroundColor = "teal";
-  }
-  else{
-    pressed = i;
-    console.log(pressed);
-    die[i].style.backgroundColor = "powderblue";
-    die[i-1].style.backgroundColor = "powderblue";
-    die[i+1].style.backgroundColor = "powderblue";
-    die[i+4].style.backgroundColor = "powderblue";
-    die[i+5].style.backgroundColor = "powderblue";
-    die[i+6].style.backgroundColor = "powderblue";
-    die[i-4].style.backgroundColor = "powderblue";
-    die[i-5].style.backgroundColor = "powderblue";
-    die[i-6].style.backgroundColor = "powderblue";
-  }
-})
 
-
-
-  // die[i].addEventListener("mousedown", function(){
-  //   die[i].style.backgroundColor = "gold";
-  //   word += event.target.innerHTML
-  //   used_index.push(i)
-  //   previous = i
-  //   console.log(previous)
-  //
-  //   die[i].addEventListener("mouseup", function(){
-  //     if(word.length >= 3)
-  //     console.log(word)
-  //     console.log(used_index)
-  //
-  //   })
-  //
-  // })
-
+  function addLetter(param) {
+  			return function() {
+  				if (this.classList.contains("selected") || this.classList.contains("disabled")) {
+  					return;
+  				}
+          var toGuess = param;
+          guess.push(toGuess)
+          word = guess.join("")
+          valid(parseInt(this.getAttribute("data-order")))
+  }
 }
+
+  var items = gridWrapper.getElementsByTagName("li")
+  for(i=0;i<items.length;i++){
+    var chosen = items[i].getAttribute("data-value")
+    items[i].onclick = addLetter(chosen)
+  }
+
+  function clear(){
+    for(i=0; i< die.length ; i++){
+      die[i].classList.remove("disabled")
+      die[i].classList.remove("selected")
+    }
+    guess = []
+    word = ""
+    createdWord.value = ""
+  }
 
 })
