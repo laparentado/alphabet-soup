@@ -1,6 +1,13 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.createdWord{
+  border: 1px solid;
+  height: 100px;
+  width: 200px;
+}
+
+
 
 .gridWrapper{
   border:1px solid;
@@ -8,7 +15,7 @@
   max-width: 288px;
   display: wrap;
 }
-.die{
+.gridWrapper li{
   background-color: red;
   display: inline-block;
   width: 55px;
@@ -18,4 +25,11 @@
   border-radius: 25%;
   margin: 1px;
   text-align: center;
+}
+
+.gridWrapper li.disabled{
+  opacity: .4;
+}
+.gridWrapper li.selected{
+  background-color: gold;
 }

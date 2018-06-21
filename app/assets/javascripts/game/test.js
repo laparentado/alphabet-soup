@@ -58,31 +58,89 @@ var cube25 = new Array('o','o','o','t','t','u');
 var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9, cube10,
 					 cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25);
 
-var previous; //stores
 
 var gridWrapper = document.createElement("div")
 gridWrapper.classList.add("gridWrapper")
 mainContent.appendChild(gridWrapper)
 
 for(let i=0; i<grid.length;i++){
-  var dice = document.createElement("div")
-  dice.classList.add("die")
-  dice.innerHTML = grid[Math.floor(Math.random()*grid.length)][Math.floor(Math.random()*grid[i].length)]
-  gridWrapper.appendChild(dice)
+  var die = document.createElement("li")
+  die.innerHTML = grid[Math.floor(Math.random()*grid.length)][Math.floor(Math.random()*grid[i].length)]
+  gridWrapper.appendChild(die)
 
-  var die = document.getElementsByClassName("die")
-  var word = []
-  var used_index = []
-  die[i].addEventListener("mousedown", function(){
-    word.push(event.target.innerHTML)
-    used_index.push(i)
-
-    die[i].addEventListener("mouseup", function(){
-      console.log(word)
-      console.log(used_index)
-
-    })
-
-  })
+  die = gridWrapper.getElementsByTagName("li")
+  die[i].setAttribute("data-order", i)
+  die[i].setAttribute("data-value", die[i].innerHTML)
 }
+
+  var guess = []
+  var word = ""
+  var used_index = []
+
+  var createdWord = document.createElement("div")
+  createdWord.classList.add("createdWord")
+  mainContent.appendChild(createdWord)
+
+  function valid(index){
+    for(i=0; i < die.length; i++){
+        die[i].classList.add("disabled");
+
+    }if(index !=4 && index !=9 && index != 14 && index != 19 && index != 24){
+      die[index + 1].classList.remove("disabled")
+    }
+    if(index !=5 && index !=10 && index != 15 && index != 20 && index != 25 && index !=0){
+      die[index - 1].classList.remove("disabled")
+    }
+    if(index % 5 > 0){
+      die[index - 1].classList.remove("disabled")
+    }
+    if(index > 4){
+      die[index - 5].classList.remove("disabled")
+    }
+    if(index < 20){
+      die[index + 5].classList.remove("disabled")
+    }
+    if(index < 19 && index != 4 && index != 9 && index != 14 && index != 19 && index !=24){
+      die[index + 6].classList.remove("disabled")
+    }
+    if(index < 21 && index % 5 > 0){
+      die[index + 4].classList.remove("disabled")
+    }
+    if(index > 5 && index % 5 > 0){
+      die[index - 6].classList.remove("disabled")
+    }
+    if(index > 3 && index != 4 && index != 9 && index !=14 && index != 19 && index != 24){
+      die[index - 4].classList.remove("disabled")
+    }
+    die[index].classList.add("selected")
+  }
+
+  function addLetter(param) {
+  			return function() {
+  				if (this.classList.contains("selected") || this.classList.contains("disabled")) {
+  					return;
+  				}
+          var toGuess = param;
+          guess.push(toGuess)
+          word = guess.join("")
+          valid(parseInt(this.getAttribute("data-order")))
+  }
+}
+
+  var items = gridWrapper.getElementsByTagName("li")
+  for(i=0;i<items.length;i++){
+    var chosen = items[i].getAttribute("data-value")
+    items[i].onclick = addLetter(chosen)
+  }
+
+  function clear(){
+    for(i=0; i< die.length ; i++){
+      die[i].classList.remove("disabled")
+      die[i].classList.remove("selected")
+    }
+    guess = []
+    word = ""
+    createdWord.value = ""
+  }
+
 })
