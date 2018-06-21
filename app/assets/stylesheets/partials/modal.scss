@@ -1,24 +1,97 @@
-#banner {
-	top:5%;
-	width:100%;
-	opacity:.95;
-	position:fixed;
-	display:none;
-	height:100%;
-	background-color:black;
-	z-index: 5;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.modal-header {
+    padding: 2px 15px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+}
+.modal-body {
+  padding: 3px;
+  margin: 0 auto;
+  width: 80%;
+}
+.modal-body img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+}
+.modal-footer {
+    padding: 2px 15px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+}
+/* Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+/* Close */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-#banner2 {
-	top:5%;
-	width:100%;
-	opacity:.95;
-	position:fixed;
-	display:none;
-	height:100%;
-	background-color:black;
-	z-index: 5;
-}
+// #banner {
+// 	top:5%;
+// 	width:100%;
+// 	opacity:.95;
+// 	position:fixed;
+// 	display:none;
+// 	height:100%;
+// 	background-color:black;
+// 	z-index: 5;
+// }
+
+// #banner2 {
+// 	top:5%;
+// 	width:100%;
+// 	opacity:.95;
+// 	position:fixed;
+// 	display:none;
+// 	height:100%;
+// 	background-color:black;
+// 	z-index: 5;
+// }
 
 #trigger {
   cursor: pointer;
@@ -28,46 +101,46 @@
   cursor: pointer;
 }
 
-#instruct {
-  position:relative;
-  left:350px;
-  width:500px;
-  height:300px;
-  background-color:white;
-  border-radius: 40px 40px;
-}
-
-#leadButton{
-position:relative;
-left:450px;
-bottom:40px;
-
-}
-
-#howButton{
-position:relative;
-left:450px;
-bottom:40px;
-
-}
-
-#leaderboard {
-  position:relative;
-  left:350px;
-  width:500px;
-	padding-bottom:30px;
-  background-color:white;
-  border-radius: 40px 40px;
-}
-
-#instructTitle {
-  position:relative;
-  left:165px;
-
-}
-
-#leaderboardTitle {
-  position:relative;
-  left:165px;
-
-}
+// #instruct {
+//   position:relative;
+//   left:350px;
+//   width:500px;
+//   height:300px;
+//   background-color:white;
+//   border-radius: 40px 40px;
+// }
+//
+// #leadButton{
+// position:relative;
+// left:450px;
+// bottom:40px;
+//
+// }
+//
+// #howButton{
+// position:relative;
+// left:450px;
+// bottom:40px;
+//
+// }
+//
+// #leaderboard {
+//   position:relative;
+//   left:350px;
+//   width:500px;
+// 	padding-bottom:30px;
+//   background-color:white;
+//   border-radius: 40px 40px;
+// }
+//
+// #instructTitle {
+//   position:relative;
+//   left:165px;
+//
+// }
+//
+// #leaderboardTitle {
+//   position:relative;
+//   left:165px;
+//
+// }

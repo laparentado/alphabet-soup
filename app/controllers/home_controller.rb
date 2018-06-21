@@ -19,6 +19,7 @@ class HomeController < ApplicationController
     if result.results == []
       puts 'you fail'
     elsif result.results != []
+
       @length = @string.length - 2
       @word = Word.create(title: @string,user_id: @current_user,points: @length)
     end
