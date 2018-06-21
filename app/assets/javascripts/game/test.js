@@ -9,7 +9,8 @@ document.addEventListener("turbolinks:load", function() {
       type: "POST",
       data: "word=" + string,
       success: function(data) {
-        console.log(string)
+        console.log("SUCCESS")
+        clear()
       }
     });
   }
@@ -123,9 +124,25 @@ for(let i=0; i<grid.length;i++){
           var toGuess = param;
           guess.push(toGuess)
           word = guess.join("")
+          createdWord.innerHTML = word
+
           valid(parseInt(this.getAttribute("data-order")))
   }
 }
+var submit = document.createElement("button")
+var score = document.createElement("div")
+var points = 0;
+score.classList.add("score")
+mainContent.appendChild(score)
+submit.setAttribute("id", "submit")
+submit.innerHTML = "submit"
+mainContent.appendChild(submit)
+submit.addEventListener("click", function(){
+  test(word)
+  points = points+ (parseInt(word.length)-2)
+  score.innerHTML = points
+})
+
 
   var items = gridWrapper.getElementsByTagName("li")
   for(i=0;i<items.length;i++){
@@ -138,6 +155,7 @@ for(let i=0; i<grid.length;i++){
       die[i].classList.remove("disabled")
       die[i].classList.remove("selected")
     }
+    createdWord.innerHTML = ""
     guess = []
     word = ""
     createdWord.value = ""
