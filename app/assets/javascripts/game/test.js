@@ -148,21 +148,21 @@ for(let i=0; i<grid.length;i++){
   }
 }
 var submit = document.createElement("button")
-// var score = document.createElement("div")
-// var wordList = document.createElement("div")
-// var points = 0;
-// score.classList.add("score")
-// wordList.classList.add("wordList")
-// mainContent.appendChild(score)
-// mainContent.appendChild(wordList)
+var score = document.createElement("div")
+var wordList = document.createElement("div")
+var points = 0;
+score.classList.add("score")
+wordList.classList.add("wordList")
+mainContent.appendChild(score)
+mainContent.appendChild(wordList)
 submit.setAttribute("id", "submit")
 submit.innerHTML = "submit"
 mainContent.appendChild(submit)
 submit.addEventListener("click", function(){
   test(word)
-  // points = points+ (parseInt(word.length)-2)
-  // score.innerHTML = points
-  // wordList.innerHTML += word + "<br>points:" + (word.length-2) + "<br>"
+  points = points+ (parseInt(word.length)-2)
+  score.innerHTML = points
+  wordList.innerHTML += word + "<br>"
 })
 
 
@@ -195,27 +195,31 @@ submit.addEventListener("click", function(){
     if(s==59){m=m-1}
     //if(m<0){alert('timer completed')}
 
+    var modal = mainContent.getElementsByClassName("modal")[0];
+    var reload = mainContent.getElementsByClassName("reload")[0];
+
+    if(m == 0 && s == 00){
+      modal.style.display="block";
+      timer.style.display= "none";
+      reload.onclick = function(){
+        location.reload()
+      }
+    }
+
     document.getElementById('timer').innerHTML =
       m + ":" + s;
     setTimeout(startTimer, 1000);
 
   }
 
+
+
   function checkSecond(sec) {
     if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
     if (sec < 0) {sec = "59"};
     return sec;
   }
-  var modal = mainContent.getElementsByClassName("modal")[0];
-  var reload = mainContent.getElementsByClassName("reload")[0];
-  // var home = mainContent.getElementsByClassName("home")[0];
 
-  setTimeout(function(){
-    modal.style.display="block";
-  }, 180000);
 
-  reload.onclick = function(){
-    location.reload()
-  }
 
   })
