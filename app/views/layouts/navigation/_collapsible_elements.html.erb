@@ -2,11 +2,11 @@
   <ul class="nav navbar-nav ">
     <% if user_signed_in? %>
       <li class="dropdown pc-menu">
-        <%= content_tag("a","Leaderboard",id: "trigger2")%>
+        <%= content_tag("a","Leaderboard",id: "trigger2", class: "solo-link")%>
       </li>
 
       <li class="dropdown pc-menu">
-        <%= content_tag("a","How To Play",id: "trigger")%>
+        <%= content_tag("a","How To Play",id: "trigger", class: "solo-link")%>
       </li>
 
       <li class="dropdown pc-menu">
