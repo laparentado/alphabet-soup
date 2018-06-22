@@ -167,9 +167,10 @@ reset.innerHTML = "reset"
 mainContent.appendChild(reset)
 submit.addEventListener("click", function(){
   test(word)
-  points = points+ (parseInt(word.length)-2)
+  worth = parseInt(word.length)-2
+  points = points+ worth
   score.innerHTML = points
-  wordList.innerHTML += word + "<br>"
+  wordList.innerHTML += word + ": " + worth + "<br>"
 })
 reset.addEventListener("click", function(){
   location.reload()
