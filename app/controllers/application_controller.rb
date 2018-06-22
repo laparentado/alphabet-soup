@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
 
 
   def score_params
-    @scores = Score.all
+    @user = User.all
+
   end
 
   private
