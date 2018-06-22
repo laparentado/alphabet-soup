@@ -5,8 +5,8 @@ class HomeController < ApplicationController
   def index
     client = OxfordDictionary::Client.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
     client = OxfordDictionary.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
-    puts " I am trying to print it here "
-  puts @answer
+
+    @word = cookies[:title]
   end
 
 
@@ -18,11 +18,17 @@ class HomeController < ApplicationController
     result =  client.search(@string,prefix: true)
     @display_arr = []
     if result.results == []
-      puts "you fail"
-    else
+      puts 'you fail'
+    elsif result.results != []
+
       @length = @string.length - 2
       @word = Word.create(title: @string,user_id: @current_user,points: @length)
+<<<<<<< HEAD
       @display_arr.push(@string)
+=======
+      cookies[:title] = @word.title
+
+>>>>>>> 93b6ddd1ed84220b69a7a1c3aa9d8562e3251f4b
     end
   end
 
