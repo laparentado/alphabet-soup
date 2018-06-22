@@ -16,6 +16,7 @@ class HomeController < ApplicationController
     @current_user = current_user.id
     @string = params[:word]
     result =  client.search(@string,prefix: true)
+    @display_arr = []
     if result.results == []
       puts 'you fail'
     elsif result.results != []
@@ -23,7 +24,6 @@ class HomeController < ApplicationController
       @length = @string.length - 2
       @word = Word.create(title: @string,user_id: @current_user,points: @length)
       cookies[:title] = @word.title
-
     end
   end
 
