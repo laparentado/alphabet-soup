@@ -4,9 +4,3 @@
 </div>
 
 <%javascript_include_tag 'game/test.js' %>
-
-<% if user_signed_in? %>
-<% @word.each do |w| %>
-<%= w.title %>
-<% end %>
-<% end %>
