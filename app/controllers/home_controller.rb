@@ -5,13 +5,8 @@ class HomeController < ApplicationController
   def index
     client = OxfordDictionary::Client.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
     client = OxfordDictionary.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
-    puts " I am trying to print it here "
 
-    if user_signed_in?
-    @user = current_user.id
-    @word = Word.where(user_id: @user)
-    else
-    end
+
   end
 
 
