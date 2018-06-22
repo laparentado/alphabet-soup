@@ -5,4 +5,8 @@
 
 <%javascript_include_tag 'game/test.js' %>
 
-Word :<%= @answer2 %>
+<% if user_signed_in? %>
+<% @word.each do |w| %>
+<%= w.title %>
+<% end %>
+<% end %>
