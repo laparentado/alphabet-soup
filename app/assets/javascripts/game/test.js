@@ -184,7 +184,7 @@ submit.addEventListener("click", function(){
   }
 
   document.getElementById('timer').innerHTML =
-    03 + ":" + 00;
+    03 + ":" + 01;
   startTimer();
 
   function startTimer() {
@@ -198,6 +198,7 @@ submit.addEventListener("click", function(){
     document.getElementById('timer').innerHTML =
       m + ":" + s;
     setTimeout(startTimer, 1000);
+
   }
 
   function checkSecond(sec) {
@@ -205,7 +206,16 @@ submit.addEventListener("click", function(){
     if (sec < 0) {sec = "59"};
     return sec;
   }
+  var modal = mainContent.getElementsByClassName("modal")[0];
+  var reload = mainContent.getElementsByClassName("reload")[0];
+  // var home = mainContent.getElementsByClassName("home")[0];
+
   setTimeout(function(){
-    location.reload()
+    modal.style.display="block";
   }, 180000);
+
+  reload.onclick = function(){
+    location.reload()
+  }
+
   })
