@@ -1,13 +1,17 @@
-<h2><%= @user.username %>'s Profile</h2>
+<div class="userPage"><h2><%= @user.username %>'s Profile</h2>
 Email: <%= @user.email %>
 <hr>
-<h3>Scores:</h3>
+<!-- <h3>Scores:</h3>
 <% scores = @user.scores %>
 <% scores.each do |s| %>
 <div><%= s.points %></div>
-<% end %>
+<% end %> -->
 
 <% @words.each do |w| %>
-<%= w.title %><br>
-<%= w.points %>
+<%= w.title %>
+(<%= w.points %>)
+<hr>
 <% end %>
+Total Points: <%= Word.sum(:points) %>
+
+</div>
