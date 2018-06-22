@@ -5,7 +5,8 @@ before_action :score_params
 
 
   def score_params
-    @scores = Score.all
+    @user = User.all
+
   end
 
 
