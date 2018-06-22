@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     client = OxfordDictionary::Client.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
     client = OxfordDictionary.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
 
+    @word = cookies[:title]
   end
 
 
@@ -21,6 +22,8 @@ class HomeController < ApplicationController
 
       @length = @string.length - 2
       @word = Word.create(title: @string,user_id: @current_user,points: @length)
+      cookies[:title] = @word.title
+
     end
   end
 
