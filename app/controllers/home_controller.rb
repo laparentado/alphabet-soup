@@ -6,7 +6,6 @@ class HomeController < ApplicationController
     client = OxfordDictionary::Client.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
     client = OxfordDictionary.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
 
-
   end
 
 
