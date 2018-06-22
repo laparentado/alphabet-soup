@@ -23,12 +23,7 @@ class HomeController < ApplicationController
 
       @length = @string.length - 2
       @word = Word.create(title: @string,user_id: @current_user,points: @length)
-<<<<<<< HEAD
-      @display_arr.push(@string)
-=======
       cookies[:title] = @word.title
-
->>>>>>> 93b6ddd1ed84220b69a7a1c3aa9d8562e3251f4b
     end
   end
 

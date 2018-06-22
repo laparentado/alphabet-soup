@@ -1,17 +1,16 @@
-<div class="userPage"><h2><%= @user.username %>'s Profile</h2>
-Email: <%= @user.email %>
-<hr>
-<!-- <h3>Scores:</h3>
-<% scores = @user.scores %>
-<% scores.each do |s| %>
-<div><%= s.points %></div>
-<% end %> -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2 class="text-center"><%= @user.username %>'s Profile</h2>
+        Email: <%= @user.email %>
+        <hr>
 
-<% @words.each do |w| %>
-<%= w.title %>
-(<%= w.points %>)
-<hr>
-<% end %>
-Total Points: <%= Word.where(user_id: @user.id).sum(:points) %>
-
+        <% @words.each do |w| %>
+        <%= w.title %>
+        (<%= w.points %>)
+        <hr>
+        <% end %>
+        Total Points: <%= Word.where(user_id: @user.id).sum(:points) %>
+      </div>
+  </div>
 </div>
