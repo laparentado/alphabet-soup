@@ -5,4 +5,6 @@
 
 <%javascript_include_tag 'game/test.js' %>
 
-Word :<%= @answer2 %>
+Word :<% @words.each do |w| %>
+<%= w.title %>
+<% end %>
