@@ -7,9 +7,11 @@ class HomeController < ApplicationController
     client = OxfordDictionary.new(app_id: ENV["dictionary_id"], app_key: ENV["dictionary_key"])
     puts " I am trying to print it here "
 
-    @current_user = current_user.id
-    @words = Word.where(current_user.id)
-
+    if user_signed_in?
+    @user = current_user.id
+    @word = Word.where(user_id: @user)
+    else
+    end
   end
 
 

@@ -6,3 +6,8 @@ Email: <%= @user.email %>
 <% scores.each do |s| %>
 <div><%= s.points %></div>
 <% end %>
+
+<% @words.each do |w| %>
+<%= w.title %><br>
+<%= w.points %>
+<% end %>
