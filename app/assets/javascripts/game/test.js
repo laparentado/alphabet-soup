@@ -43,10 +43,10 @@ document.addEventListener("turbolinks:load", function() {
     }
   }
 
-  // test(string1)
 
 var mainContent = document.getElementById("main-content")
 
+//these are the cube letter arrays
 var cube1 = new Array('a','a','a','f','r','s');
 var cube2 = new Array('a','a','e','e','e','e');
 var cube3 = new Array('a','a','f','i','r','s');
@@ -77,7 +77,7 @@ var cube25 = new Array('o','o','o','t','t','u');
 var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9, cube10,
 					 cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18, cube19, cube20, cube21, cube22, cube23, cube24, cube25);
 
-
+//append cubes in random order with random letter from their corresponding array to board
 var gridWrapper = document.createElement("div")
 gridWrapper.classList.add("gridWrapper")
 mainContent.appendChild(gridWrapper)
@@ -100,6 +100,7 @@ for(let i=0; i<grid.length;i++){
   createdWord.classList.add("createdWord")
   mainContent.appendChild(createdWord)
 
+//disable or enable cubes according to if they have previously been used or are adjacent to current cube
   function valid(index){
     for(i=0; i < die.length; i++){
         die[i].classList.add("disabled");
@@ -147,24 +148,33 @@ for(let i=0; i<grid.length;i++){
           valid(parseInt(this.getAttribute("data-order")))
   }
 }
+
+//submit & reset buttons, score shown, guessed words shown
 var submit = document.createElement("button")
-// var score = document.createElement("div")
-// var wordList = document.createElement("div")
-// var points = 0;
-// score.classList.add("score")
-// wordList.classList.add("wordList")
-// mainContent.appendChild(score)
-// mainContent.appendChild(wordList)
+var reset = document.createElement("button")
+var score = document.createElement("div")
+var wordList = document.createElement("div")
+var points = 0;
+score.classList.add("score")
+wordList.classList.add("wordList")
+mainContent.appendChild(score)
+mainContent.appendChild(wordList)
 submit.setAttribute("id", "submit")
 submit.innerHTML = "submit"
 mainContent.appendChild(submit)
+reset.setAttribute("id", "reset")
+reset.innerHTML = "reset"
+mainContent.appendChild(reset)
 submit.addEventListener("click", function(){
   test(word)
-  // points = points+ (parseInt(word.length)-2)
-  // score.innerHTML = points
-  // wordList.innerHTML += word + "<br>points:" + (word.length-2) + "<br>"
+  worth = parseInt(word.length)-2
+  points = points+ worth
+  score.innerHTML = points
+  wordList.innerHTML += word + ": " + worth + "<br>"
 })
-
+reset.addEventListener("click", function(){
+  location.reload()
+})
 
   var items = gridWrapper.getElementsByTagName("li")
   for(i=0;i<items.length;i++){
@@ -183,6 +193,7 @@ submit.addEventListener("click", function(){
     createdWord.value = ""
   }
 
+//timer and modal functions
   document.getElementById('timer').innerHTML =
     03 + ":" + 01;
   startTimer();
@@ -195,27 +206,31 @@ submit.addEventListener("click", function(){
     if(s==59){m=m-1}
     //if(m<0){alert('timer completed')}
 
+    var modal = mainContent.getElementsByClassName("modal")[0];
+    var reload = mainContent.getElementsByClassName("reload")[0];
+
+    if(m == 0 && s == 00){
+      modal.style.display="block";
+      timer.style.display= "none";
+      reload.onclick = function(){
+        location.reload()
+      }
+    }
+
     document.getElementById('timer').innerHTML =
       m + ":" + s;
     setTimeout(startTimer, 1000);
 
   }
 
+
+
   function checkSecond(sec) {
     if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
     if (sec < 0) {sec = "59"};
     return sec;
   }
-  var modal = mainContent.getElementsByClassName("modal")[0];
-  var reload = mainContent.getElementsByClassName("reload")[0];
-  // var home = mainContent.getElementsByClassName("home")[0];
 
-  setTimeout(function(){
-    modal.style.display="block";
-  }, 180000);
 
-  reload.onclick = function(){
-    location.reload()
-  }
 
   })

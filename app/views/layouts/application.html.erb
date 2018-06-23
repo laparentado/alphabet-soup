@@ -16,7 +16,7 @@
   <body>
     <%= render 'layouts/navigation' %>
     <%= yield %>
-
+    <%= render 'layouts/footer' %>
 
     <div id="banner2" class="modal">
       <div class="modal-content">
@@ -25,17 +25,19 @@
           <h2>Top Scores</h2>
         </div>
         <div class="modal-body">
-          <% score = [] %>
-          <% @scores.each do |s| %>
-          <% name = User.find(s.user_id).username %>
-          <% score.push([s.points, name]) %>
+          <% if user_signed_in? %>
+          <% top = [] %>
+          <% @user.each do |u| %>
+          <% id = u.id %>
+          <% top.push([Word.where(user_id: id).sum(:points), u.username])%>
           <% end %>
 
-          <% score.sort.reverse.take(10).each do |f|%>
-            <div class="">
-              <%= f[1] %> : <%= f[0] %>
-            </div>
+          <% top.sort.reverse.take(10).each do |t|%>
+          <%= t[1] %> : <%= t[0] %><hr>
           <% end %>
+<% end %>
+
+
         </div>
         <div class="modal-footer">
           <h3>Go get your soup on</h3>

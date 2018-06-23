@@ -1,15 +1,23 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-
-before_action :score_params
+  before_action :score_params
 
 
   def score_params
-    @scores = Score.all
+    @user = User.all
+
   end
 
-
-
+  private
+  def after_sign_out_path_for(resource_or_scope)
+    if resource_or_scope == :user
+      new_user_session_path
+    elsif resource_or_scope == :admin
+      new_admin_session_path
+    else
+      root_path
+    end
+  end
 
   protected
 
