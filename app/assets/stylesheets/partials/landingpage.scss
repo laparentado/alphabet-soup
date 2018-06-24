@@ -1,21 +1,27 @@
+.landing-body{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 100%;
+  width: 100%;
+  background-image: url('background-tile.jpg');
+}
 .page-wrapper{
-  margin: 10px auto;
+  margin: 50px auto;
   display: block;
-  width: 80%;
-  height: 500px;
-  border: 2px solid green;
-}
-
-.soup-can{
+  width: 1200px;
   height: 600px;
-  width: 400px;
-  border: 2px solid blue;
-  display: inline-block;
+  background-image: url('landing-page.gif');
+  text-align: center;
+  padding-top: 250px;
 }
 
-.soup-bowl{
-  height: 400px;
-  width: 500px;
-  border: 2px solid red;
-  display: inline-block;
+#play-link{
+  font-family: 'Chewy', cursive;
+  font-size: 150px;
+  margin-left: 320px;
+  color: tomato;
+}
+
+#play-link:hover{
+  color: papayawhip;
 }
