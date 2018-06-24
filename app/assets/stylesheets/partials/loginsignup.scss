@@ -1,0 +1,27 @@
+.form-content{
+  height: 90vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+  .field, .actions, a{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  background-image: url('background-tile.jpg');
+}
+
+.steven-idle{
+  position: absolute;
+  left: -270px;
+  top: 250px;
+}
+.lori-idle{
+  position: absolute;
+  right: -210px;
+  top: 250px;
+}
+.aaron-idle{
+  position: absolute;
+  right: -400px;
+  top: 250px;
+}

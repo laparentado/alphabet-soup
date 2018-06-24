@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load", function() {
 
   function test(string){
     Rails.ajax({
-      url: "/posting",
+      url: "/index/posting",
       type: "POST",
       data: "word=" + string,
       success: function(data) {
