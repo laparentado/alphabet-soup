@@ -14,15 +14,19 @@ class HomeController < ApplicationController
       @display_arr = []
       if result.results == []
         puts 'you fail'
+        head :ok
+
       elsif result.results != []
         @length = @string.length - 2
         @word = Word.create(title: @string,user_id: @current_user,points: @length)
+        @final = Word.all
+        head :ok
       end
     end
   end
 
 
-  
+
 
 
 

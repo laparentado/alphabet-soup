@@ -11,3 +11,12 @@
 </div>
 
 <%javascript_include_tag 'game/test.js' %>
+
+<div id="wordDiv">
+  <% if @final == nil %>
+  <% else %>
+<% @final.each do |d| %>
+<%= d.title %>
+<% end %>
+<% end %>
+</div>
