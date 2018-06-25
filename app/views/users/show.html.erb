@@ -1,16 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h2 class="text-center"><%= @player.username %>'s Profile</h2>
-        Email: <%= @player.email %>
-        <hr>
-
+      <div class="profile-header">
+        <h2 id="profile-name" class="text-center"><%= @player.username %>'s Words</h2>
+        <h4 id="profile-email" class="text-center"><%= @player.email %></h4>
+        <p class="text-center">Total Points: <%= Word.where(user_id: @player.id).sum(:points) %></p>
+      </div>
+      <div class="your-words-list">
         <% @words.each do |w| %>
-        <a href="https://en.oxforddictionaries.com/definition/<%=w.title%>" target="_blank"><%=w.title%></a>
-        (<%= w.points %>)
-        <hr>
+        <div class="word-selection">
+          <a href="https://en.oxforddictionaries.com/definition/<%=w.title%>" target="_blank" class="word-found"><strong><%=w.title%></strong></a>
+          [ <%= w.points %> ]
+        </div>
         <% end %>
-        Total Points: <%= Word.where(user_id: @player.id).sum(:points) %>
+      </div>
       </div>
   </div>
 </div>

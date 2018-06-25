@@ -1,0 +1,37 @@
+#profile-name, #profile-email{
+  font-family: 'chewy';
+  color: tomato;
+}
+
+#profile-name{
+  margin: 3px 0;
+}
+
+#profile-email{
+  margin: 3px 0;
+}
+
+.profile-header{
+  border-bottom: 2px solid darkorange;
+  margin-bottom: 5px;
+  p{
+    margin: 3px 0;
+  }
+}
+
+.your-words-list{
+  max-height: 480px;
+  overflow: auto;
+  background-image: url(lined-paper.jpg);
+}
+
+.word-selection{
+  margin: 10px 0 10px 50px;
+}
+
+.word-found, .word-found:visited{
+  color: darkorange;
+}
+.word-found:hover{
+  color: #ffba66;
+}
