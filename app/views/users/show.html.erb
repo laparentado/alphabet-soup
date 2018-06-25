@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h2 class="text-center"><%= @user.username %>'s Profile</h2>
-        Email: <%= @user.email %>
+      <h2 class="text-center"><%= @player.username %>'s Profile</h2>
+        Email: <%= @player.email %>
         <hr>
 
         <% @words.each do |w| %>
@@ -10,7 +10,7 @@
         (<%= w.points %>)
         <hr>
         <% end %>
-        Total Points: <%= Word.where(user_id: @user.id).sum(:points) %>
+        Total Points: <%= Word.where(user_id: @player.id).sum(:points) %>
       </div>
   </div>
 </div>
