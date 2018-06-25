@@ -1,12 +1,33 @@
 <div id="main-content" class="container">
-  <div id="timer"></div>
-<h2>Game</h2>
-
-  <div class="modal">
-    <div class="modal_body">
-      <button class="reload">play again</button>
-      <a href="/users/1"><button class="home">go home</button></a>
+  <div id="gameover" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Thanks For Playing</h2>
+      </div>
+      <div class="modal-body">
+        <%= image_tag("steven-idle2.gif", class: "steven-gameover") %>
+        <%= image_tag("lori-idle.gif", class: "lori-gameover") %>
+        <%= image_tag("aaron-idle.gif", class: "aaron-gameover") %>
+        <button class="reload-btn">Play Again</button>
+        <a href="/welcome"><button class="home-btn">Home</button></a>
+      </div>
+      <div class="modal-footer">
+        <h3>You scored points!</h3>
+      </div>
     </div>
+  </div>
+
+  <div id="gamescreen-content">
+    <div id="letter-board"></div>
+    <div id="words-can">
+      <div id="timer"></div>
+      <div id="score-box">
+        <p class="score-text">Total: </p>
+        <div id="total-score"></div>
+      </div>
+      <div id="guessed-words"></div>
+    </div>
+    <div id="letter-spoon"></div>
   </div>
 </div>
 

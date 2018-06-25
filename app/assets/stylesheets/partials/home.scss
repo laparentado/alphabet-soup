@@ -1,14 +1,78 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#gamescreen-content{
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  background-image: url('background-tile.jpg');
+  #words-can{
+    width: 400px;
+    height: 600px;
+    display: block;
+    float: left;
+    margin: 10px 0 0 30px;
+    background-image: url('words-can.png');
+    #timer{
+      margin: 170px auto 0 auto;
+      text-align: center;
+      font-family: 'Chewy';
+      font-size: 40px;
+      color: black;
+    }
+    #guessed-words{
+      width: 290px;
+      margin: 15px auto;
+      max-height: 220px;
+      overflow: auto;
+      // z-index: 1;
+    }
+    #score-box{
+      .score-text{
+        display: inline;
+        float: left;
+        margin: 80px 0 0 120px;
+      }
+      position: absolute;
+      // z-index: 2;
+      margin: 170px auto 0 auto;
+      text-align: center;
+      font-family: 'Chewy';
+      font-size: 40px;
+      color: black;
+      #total-score{
+        position: absolute;
+        display: inline;
+        margin: 80px 0 0 10px;
+      }
+    }
+  }
+  #letter-board{
+    width: 500px;
+    height: 500px;
+    background-image: url('top-down-bowl.gif');
+    padding-top: 106px;
+    float: right;
+    margin: 10px 30px 0 0;
+  }
+  #letter-spoon{
+    width: 500px;
+    height: 50px;
+    background-image: url('letter-spoon.png');
+    float: right;
+    margin: 40px 30px 0 0;
+  }
+}
 .gridWrapper{
-  border:1px solid;
   flex-wrap: wrap;
   max-width: 288px;
   display: wrap;
+  margin: 0 auto;
 }
 .gridWrapper li{
-  background-color: red;
+  background-color: rgba(255, 140, 0, .75);
+  font-family: 'Chewy';
+  color: black;
   display: inline-block;
   width: 55px;
   height: 55px;
@@ -20,23 +84,55 @@
 }
 
 .gridWrapper li.disabled{
-  opacity: .4;
+  background-color: papayawhip;
+  opacity: .5;
 }
 .gridWrapper li.selected{
-  background-color: gold;
+  background-color: tomato;
+  opacity: 1;
 }
 
 .createdWord{
-  border: 1px solid;
-  height: 50px;
-  width: 100px;
+  font-family: 'Neucha';
+  font-size: 40px;
+  width: 400px;
+  margin: 110px auto 0 auto;
+  text-align: center;
+  // z-index: 1;
+  display: inline-block;
 }
 .score{
-  border: 1px solid red;
   height: 50px;
   width: 100px;
 }
 .wordList{
-  border: 1px solid green;
   width: 100px;
+  text-align: center;
+  margin: 3px auto;
+  font-size: 20px;
+  font-family: 'neucha';
 }
+#submit{
+  position: absolute;
+  bottom: 130px;
+  right: 270px;
+  font-size: 20px;
+  border-radius: 10px;
+  // z-index: 2;
+}
+#submit:hover{background-color: #ffefd5}
+#submit:active{background-color: #ffce80}
+#submit:focus{outline: 0;}
+
+#reset{
+  position: absolute;
+  margin-left: 160px;
+  bottom: 80px;
+  font-size: 20px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#reset:hover{background-color: #ff9380}
+#reset:active{background-color: #ff5233}
+#reset:focus{outline: 0;}

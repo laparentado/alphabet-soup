@@ -27,7 +27,7 @@
 }
 .modal-header {
     padding: 2px 15px;
-    background-color: #5cb85c;
+    background-color: tomato;
     color: white;
     text-align: center;
 }
@@ -37,14 +37,12 @@
   width: 80%;
 }
 .modal-body img {
-  width: 50%;
-  display: block;
   margin-left: auto;
   margin-right:auto;
 }
 .modal-footer {
     padding: 2px 15px;
-    background-color: #5cb85c;
+    background-color: tomato;
     color: white;
     text-align: center;
 }
@@ -70,28 +68,35 @@
     text-decoration: none;
     cursor: pointer;
 }
-
-// #banner {
-// 	top:5%;
-// 	width:100%;
-// 	opacity:.95;
-// 	position:fixed;
-// 	display:none;
-// 	height:100%;
-// 	background-color:black;
-// 	z-index: 5;
-// }
-
-// #banner2 {
-// 	top:5%;
-// 	width:100%;
-// 	opacity:.95;
-// 	position:fixed;
-// 	display:none;
-// 	height:100%;
-// 	background-color:black;
-// 	z-index: 5;
-// }
+#gameover{
+  margin-top: -10px;
+  .steven-gameover, .lori-gameover, .aaron-gameover{
+    max-width: 280px;
+  }
+  .reload-btn, .home-btn{
+    font-family: 'chewy';
+    background-color: darkorange;
+    color: white;
+    font-size: 36px;
+    border-radius: 20px;
+  }
+  .reload-btn{
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    width: 200px;
+  }
+  .home-btn{
+    position: absolute;
+    top: 170px;
+    right: 30px;
+    width: 200px;
+  }
+  .home-btn:visited{color: white;}
+  .home-btn:focus, .reload-btn:focus{outline: 0;}
+  .home-btn:hover, .reload-btn:hover{background-color: #ffba66;}
+  .home-btn:active, .reload-btn:active{background-color: white; color: darkorange; border: 2px solid darkorange;}
+}
 
 #trigger {
   cursor: pointer;
