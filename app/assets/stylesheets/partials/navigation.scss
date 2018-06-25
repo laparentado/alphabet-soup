@@ -27,10 +27,10 @@ nav {
 }
 
 .navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
-  background: $navbarColor !important;
+  background: papayawhip !important;
   border: none;
   a {
-    color: white !important;
+    color: #ff8c00 !important;
   }
 }
 
@@ -63,21 +63,21 @@ nav {
 }
 
 .active a {
-  background: $navbarColor !important;
+  background: papayawhip !important;
   border-bottom: solid 5px white;
 }
 
 .dropdown-toggle, .dropdown-menu {
-  background: $navbarColor !important;
+  background: papayawhip !important;
   border: none;
 }
 
 .dropdown-menu a:hover {
-  color: black !important;
-  background: white !important;
+  color: white !important;
+  background: darkorange !important;
 }
 
 .solo-link:hover{
-  color: black !important;
-  background: white !important;
+  color: white !important;
+  background: darkorange !important;
 }

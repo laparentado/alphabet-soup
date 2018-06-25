@@ -45,6 +45,12 @@ document.addEventListener("turbolinks:load", function() {
 
 
 var mainContent = document.getElementById("main-content")
+var letterBoard = document.getElementById("letter-board")
+var guessedWords = document.getElementById("guessed-words")
+var letterSpoon = document.getElementById("letter-spoon")
+var wordsCan = document.getElementById("words-can")
+var gameScreen = document.getElementById("gamescreen-content")
+var totalScore = document.getElementById("total-score")
 
 //these are the cube letter arrays
 var cube1 = new Array('a','a','a','f','r','s');
@@ -80,7 +86,7 @@ var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cub
 //append cubes in random order with random letter from their corresponding array to board
 var gridWrapper = document.createElement("div")
 gridWrapper.classList.add("gridWrapper")
-mainContent.appendChild(gridWrapper)
+letterBoard.appendChild(gridWrapper)
 
 for(let i=0; i<grid.length;i++){
   var die = document.createElement("li")
@@ -98,7 +104,7 @@ for(let i=0; i<grid.length;i++){
 
   var createdWord = document.createElement("div")
   createdWord.classList.add("createdWord")
-  mainContent.appendChild(createdWord)
+  letterBoard.appendChild(createdWord)
 
 //disable or enable cubes according to if they have previously been used or are adjacent to current cube
   function valid(index){
@@ -157,20 +163,20 @@ var wordList = document.createElement("div")
 var points = 0;
 score.classList.add("score")
 wordList.classList.add("wordList")
-mainContent.appendChild(score)
-mainContent.appendChild(wordList)
+totalScore.appendChild(score)
+guessedWords.appendChild(wordList)
 submit.setAttribute("id", "submit")
 submit.innerHTML = "submit"
-mainContent.appendChild(submit)
+letterBoard.appendChild(submit)
 reset.setAttribute("id", "reset")
-reset.innerHTML = "reset"
-mainContent.appendChild(reset)
+reset.innerHTML = "RESET"
+wordsCan.appendChild(reset)
 submit.addEventListener("click", function(){
   test(word)
   worth = parseInt(word.length)-2
   points = points+ worth
   score.innerHTML = points
-  wordList.innerHTML += word + ": " + worth + "<br>"
+  wordList.innerHTML += "<strong>" + word + "</strong>" + ":      " + worth + "<br>"
 })
 reset.addEventListener("click", function(){
   location.reload()
@@ -207,7 +213,7 @@ reset.addEventListener("click", function(){
     //if(m<0){alert('timer completed')}
 
     var modal = mainContent.getElementsByClassName("modal")[0];
-    var reload = mainContent.getElementsByClassName("reload")[0];
+    var reload = mainContent.getElementsByClassName("reload-btn")[0];
 
     if(m == 0 && s == 00){
       modal.style.display="block";

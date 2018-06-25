@@ -1,8 +1,8 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 100px;
+    z-index: 2;
+    padding-top: 70px;
     left: 0;
     top: 0;
     width: 100%;
@@ -27,7 +27,7 @@
 }
 .modal-header {
     padding: 2px 15px;
-    background-color: #5cb85c;
+    background-color: tomato;
     color: white;
     text-align: center;
 }
@@ -35,16 +35,33 @@
   padding: 3px;
   margin: 0 auto;
   width: 80%;
+  overflow: auto;
 }
 .modal-body img {
-  width: 50%;
-  display: block;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
 }
+
+.tutorial{
+  width: 600px;
+}
+.directions{
+  float: right;
+  padding-left: 5px;
+  width: 300px;
+  p{
+    font-size: 16px;
+  }
+}
+.sub-title{
+  font-family: 'chewy';
+  font-size: 24px;
+  color: darkorange;
+}
+
 .modal-footer {
     padding: 2px 15px;
-    background-color: #5cb85c;
+    background-color: tomato;
     color: white;
     text-align: center;
 }
@@ -71,27 +88,61 @@
     cursor: pointer;
 }
 
-// #banner {
-// 	top:5%;
-// 	width:100%;
-// 	opacity:.95;
-// 	position:fixed;
-// 	display:none;
-// 	height:100%;
-// 	background-color:black;
-// 	z-index: 5;
-// }
+#gameover{
+  margin-top: -10px;
+  .steven-gameover, .lori-gameover, .aaron-gameover{
+    max-width: 280px;
+  }
+  .reload-btn, .home-btn{
+    font-family: 'chewy';
+    background-color: darkorange;
+    color: white;
+    font-size: 36px;
+    border-radius: 20px;
+  }
+  .reload-btn{
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    width: 200px;
+  }
+  .home-btn{
+    position: absolute;
+    top: 170px;
+    right: 30px;
+    width: 200px;
+  }
+  .home-btn:visited{color: white;}
+  .home-btn:focus, .reload-btn:focus{outline: 0;}
+  .home-btn:hover, .reload-btn:hover{background-color: #ffba66;}
+  .home-btn:active, .reload-btn:active{background-color: white; color: darkorange; border: 2px solid darkorange;}
+}
 
-// #banner2 {
-// 	top:5%;
-// 	width:100%;
-// 	opacity:.95;
-// 	position:fixed;
-// 	display:none;
-// 	height:100%;
-// 	background-color:black;
-// 	z-index: 5;
-// }
+.leaderboard-score{
+  font-family: 'neucha';
+  font-size: 18px;
+  display: flex;
+}
+.leaderboard-score > .scoreboard-left{
+  flex: 1;
+}
+.leaderboard-score > .scoreboard-right{
+  flex: 1;
+}
+.scoreboard-left{
+  width: 30%;
+  text-align: center;
+  margin-right: -5px;
+}
+.scoreboard-right{
+  width: 30%;
+  text-align: center;
+  margin-left: -5px;
+}
+.player-name, .player-score{
+  margin-top: 15px;
+  border-bottom: 1px solid darkorange;
+}
 
 #trigger {
   cursor: pointer;
@@ -100,47 +151,3 @@
 #trigger2 {
   cursor: pointer;
 }
-
-// #instruct {
-//   position:relative;
-//   left:350px;
-//   width:500px;
-//   height:300px;
-//   background-color:white;
-//   border-radius: 40px 40px;
-// }
-//
-// #leadButton{
-// position:relative;
-// left:450px;
-// bottom:40px;
-//
-// }
-//
-// #howButton{
-// position:relative;
-// left:450px;
-// bottom:40px;
-//
-// }
-//
-// #leaderboard {
-//   position:relative;
-//   left:350px;
-//   width:500px;
-// 	padding-bottom:30px;
-//   background-color:white;
-//   border-radius: 40px 40px;
-// }
-//
-// #instructTitle {
-//   position:relative;
-//   left:165px;
-//
-// }
-//
-// #leaderboardTitle {
-//   position:relative;
-//   left:165px;
-//
-// }
