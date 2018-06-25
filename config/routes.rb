@@ -10,10 +10,11 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
   end
 
-  root 'home#landingpage'
+  root "home#index"
   post "/posting" => "home#posting"
   get "/new" => "home#new"
   get "/index" => "home#index"
+  get "/welcome" => "home#landingpage"
 
   resources :users
 end

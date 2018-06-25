@@ -22,7 +22,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <span class="close">&times;</span>
-          <h2>Top Scores</h2>
+          <h2>Top Players</h2>
         </div>
         <div class="modal-body">
           <% if user_signed_in? %>
@@ -33,9 +33,11 @@
           <% end %>
 
           <% top.sort.reverse.take(10).each do |t|%>
-          <%= t[1] %> : <%= t[0] %><hr>
+            <div class="leaderboard-score">
+              <div class="player-name"><%= t[1] %></div> : <div class="player-score"><%= t[0] %></div>
+            </div>
           <% end %>
-<% end %>
+          <% end %>
 
 
         </div>
