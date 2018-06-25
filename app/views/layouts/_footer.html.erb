@@ -1,11 +1,38 @@
-<nav class="navbar navbar-default navbar-fixed-bottom nav-footer">
+<!-- <nav id="footer-links" class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <a href="#">Steven</a>
+    <a href="#">Lori</a>
+    <a href="#">Aaron</a>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <a href="#">Steven</a>
-        <a href="#">Lori</a>
-        <a href="#">Aaron</a>
-      </div>
-    </div>
+
+      <!-- Elements visible all the time -->
+      <div class="col-sm-7">
+      </div><!-- col-sm-7 -->
+
+      <!-- Elements collapses on smaller devices -->
+      <div class="col-sm-5">
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapsible-content">
+          <ul class="nav navbar-nav ">
+              <li class="dropdown pc-menu">
+                <%= link_to 'Steven', "#", class: "solo-link"%>
+              </li>
+
+              <li class="dropdown pc-menu">
+                <%= link_to 'Lori', "#", class: "solo-link"%>
+              </li>
+
+              <li class="dropdown pc-menu">
+                <%= link_to 'Aaron', "#", class: "solo-link"%>
+              </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- col-sm-5 -->
+
+    </div><!-- row -->
   </div>
 </nav>
