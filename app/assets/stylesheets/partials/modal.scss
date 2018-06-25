@@ -1,8 +1,8 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 100px;
+    z-index: 2;
+    padding-top: 70px;
     left: 0;
     top: 0;
     width: 100%;
@@ -35,11 +35,30 @@
   padding: 3px;
   margin: 0 auto;
   width: 80%;
+  overflow: auto;
 }
 .modal-body img {
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
 }
+
+.tutorial{
+  width: 600px;
+}
+.directions{
+  float: right;
+  padding-left: 5px;
+  width: 300px;
+  p{
+    font-size: 16px;
+  }
+}
+.sub-title{
+  font-family: 'chewy';
+  font-size: 24px;
+  color: darkorange;
+}
+
 .modal-footer {
     padding: 2px 15px;
     background-color: tomato;
@@ -68,6 +87,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
 #gameover{
   margin-top: -10px;
   .steven-gameover, .lori-gameover, .aaron-gameover{
@@ -98,6 +118,32 @@
   .home-btn:active, .reload-btn:active{background-color: white; color: darkorange; border: 2px solid darkorange;}
 }
 
+.leaderboard-score{
+  font-family: 'neucha';
+  font-size: 18px;
+  display: flex;
+}
+.leaderboard-score > .scoreboard-left{
+  flex: 1;
+}
+.leaderboard-score > .scoreboard-right{
+  flex: 1;
+}
+.scoreboard-left{
+  width: 30%;
+  text-align: center;
+  margin-right: -5px;
+}
+.scoreboard-right{
+  width: 30%;
+  text-align: center;
+  margin-left: -5px;
+}
+.player-name, .player-score{
+  margin-top: 15px;
+  border-bottom: 1px solid darkorange;
+}
+
 #trigger {
   cursor: pointer;
 }
@@ -105,47 +151,3 @@
 #trigger2 {
   cursor: pointer;
 }
-
-// #instruct {
-//   position:relative;
-//   left:350px;
-//   width:500px;
-//   height:300px;
-//   background-color:white;
-//   border-radius: 40px 40px;
-// }
-//
-// #leadButton{
-// position:relative;
-// left:450px;
-// bottom:40px;
-//
-// }
-//
-// #howButton{
-// position:relative;
-// left:450px;
-// bottom:40px;
-//
-// }
-//
-// #leaderboard {
-//   position:relative;
-//   left:350px;
-//   width:500px;
-// 	padding-bottom:30px;
-//   background-color:white;
-//   border-radius: 40px 40px;
-// }
-//
-// #instructTitle {
-//   position:relative;
-//   left:165px;
-//
-// }
-//
-// #leaderboardTitle {
-//   position:relative;
-//   left:165px;
-//
-// }

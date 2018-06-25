@@ -25,21 +25,28 @@
           <h2>Top Players</h2>
         </div>
         <div class="modal-body">
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
           <% top = [] %>
           <% @user.each do |u| %>
-          <% id = u.id %>
-          <% top.push([Word.where(user_id: id).sum(:points), u.username])%>
+            <% id = u.id %>
+            <% top.push([Word.where(user_id: id).sum(:points), u.username])%>
           <% end %>
 
-          <% top.sort.reverse.take(10).each do |t|%>
             <div class="leaderboard-score">
-              <div class="player-name"><%= t[1] %></div> : <div class="player-score"><%= t[0] %></div>
+              <div class="scoreboard-left">
+                <h4><strong>Player</strong></h4>
+                <% top.sort.reverse.take(10).each do |t|%>
+                  <div class="player-name"><%= t[1] %></div>
+                <% end %>
+              </div>
+              <div class="scoreboard-right">
+                <h4><strong>Points</strong></h4>
+                <% top.sort.reverse.take(10).each do |t|%>
+                  <div class="player-score"><%= t[0] %></div>
+                <% end %>
+              </div>
             </div>
           <% end %>
-          <% end %>
-
-
         </div>
         <div class="modal-footer">
           <h3>Go get your soup on</h3>
@@ -54,7 +61,15 @@
           <h2>How To Play</h2>
         </div>
         <div class="modal-body">
-          <p>RUlES ANd STUff</p>
+          <%= image_tag("tutorial-pic.png", class: "tutorial") %>
+          <div class="directions">
+            <h5 class="sub-title">1. The Can</h5>
+            <p>Timer on top, words and their worth in the middle, total score on the bottom.</p>
+            <h5 class="sub-title">2. The Bowl</h5>
+            <p>A random letter grid is generated every round. Selected letters are in red, orange adjacent letters show which are available to you.</p>
+            <h5 class="sub-title">3. The Spoon</h5>
+            <p>As you click, your letters show up here. You can clear it by submitting the word for points.</p>
+          </div>
         </div>
         <div class="modal-footer">
           <h3>Go get your soup on</h3>
