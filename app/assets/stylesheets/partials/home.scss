@@ -110,9 +110,9 @@
   font-family: 'neucha';
 }
 #submit{
-  position: relative;
-  bottom: -25px;
-  right: 20px;
+  position: absolute;
+  bottom: 135px;
+  right: 275px;
   font-size: 20px;
   border-radius: 10px;
 }
@@ -121,9 +121,9 @@
 #submit:focus{outline: 0;}
 
 #reset{
-  position: relative;
+  position: absolute;
   margin-left: 160px;
-  bottom: -290px;
+  bottom: 75px;
   font-size: 20px;
   border-radius: 10px;
   padding-left: 10px;
