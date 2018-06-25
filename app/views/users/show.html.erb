@@ -6,7 +6,7 @@
         <hr>
 
         <% @words.each do |w| %>
-        <%= w.title %>
+        <a href="https://en.oxforddictionaries.com/definition/<%=w.title%>" target="_blank"><%=w.title%></a>
         (<%= w.points %>)
         <hr>
         <% end %>
