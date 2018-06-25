@@ -172,11 +172,16 @@ reset.setAttribute("id", "reset")
 reset.innerHTML = "RESET"
 wordsCan.appendChild(reset)
 submit.addEventListener("click", function(){
+  if(word.length >= 3){
   test(word)
   worth = parseInt(word.length)-2
   points = points+ worth
   score.innerHTML = points
   wordList.innerHTML += "<strong>" + word + "</strong>" + ":      " + worth + "<br>"
+}else {
+  alert("too short")
+  clear()
+}
 })
 reset.addEventListener("click", function(){
   location.reload()
