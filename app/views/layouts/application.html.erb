@@ -27,7 +27,7 @@
         <div class="modal-body">
         <% if user_signed_in? %>
           <% top = [] %>
-          <% @user.each do |u| %>
+          <% @person.each do |u| %>
             <% id = u.id %>
             <% top.push([Word.where(user_id: id).sum(:points), u.username])%>
           <% end %>
