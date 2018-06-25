@@ -213,7 +213,7 @@ reset.addEventListener("click", function(){
     //if(m<0){alert('timer completed')}
 
     var modal = mainContent.getElementsByClassName("modal")[0];
-    var reload = mainContent.getElementsByClassName("reload")[0];
+    var reload = mainContent.getElementsByClassName("reload-btn")[0];
 
     if(m == 0 && s == 00){
       modal.style.display="block";
