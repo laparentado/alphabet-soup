@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'signup', to: 'devise/registrations#new'
+    get 'edit password', to: 'devise/passwords#edit'
 
     authenticated  do
       root to: 'home#landingpage'
